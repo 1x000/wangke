@@ -1,0 +1,31 @@
+name: Build Go App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.20
+
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Build app
+      run: chmod +x ./build.sh && ./build.sh
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: binaries
+        path: |
+          ./build/app_windows_amd64.exe
+          ./build/app_linux_amd64
+          ./build/app_linux_arm64
