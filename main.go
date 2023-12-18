@@ -1,4 +1,4 @@
-package wangke
+package main
 
 import (
 	"encoding/json"
