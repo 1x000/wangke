@@ -27,11 +27,6 @@ jobs:
     - name: Check go.sum
       run: if [ ! -f go.sum ]; then touch go.sum; fi
 
-    - name: Install UPX
-      uses: crazy-max/ghaction-upx@v3
-      with:
-        install-only: true
-
     - name: Build app
       run: chmod +x ./build.sh && ./build.sh
 
