@@ -35,6 +35,6 @@ jobs:
       with:
         name: binaries
         path: |
-          ./build/myapp_windows_amd64.exe
-          ./build/myapp_linux_amd64
-          ./build/myapp_linux_arm64
+          ./build/wangke_windows_amd64.exe
+          ./build/wangke_linux_amd64
+          ./build/wangke_linux_arm64
