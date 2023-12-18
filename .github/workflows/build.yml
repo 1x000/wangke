@@ -18,6 +18,9 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v2
 
+    - name: Create go.sum
+      run: touch go.sum
+
     - name: Generate go.sum
       run: go mod tidy
 
@@ -33,7 +36,7 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: binaries
+        name: 网课构建
         path: |
           ./build/wangke_windows_amd64.exe
           ./build/wangke_linux_amd64
