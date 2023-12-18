@@ -21,6 +21,9 @@ jobs:
     - name: Generate go.sum
       run: go mod tidy
 
+    - name: Check go.sum
+      run: if [ ! -f go.sum ]; then touch go.sum; fi
+
     - name: Build app
       run: chmod +x ./build.sh && ./build.sh
 
